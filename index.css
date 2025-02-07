@@ -1,0 +1,37 @@
+html {
+    background-color: grey;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#input-el {
+    color: 283618;
+    font-weight: 800px;
+    background-color: fefae0;
+    border-radius: 8px;
+    width: 300px;
+    height: 50px;
+    border-color: goldenrod;
+    border-width: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}
+
+#input-btn {
+    margin-left: 6px;
+    height: 50px;
+    padding: 2px 8px;
+    background-color: dda15e;
+    border-radius: 6px;
+    border-color:bc6c25;
+    border-width: 3px;
+    border-top-right-radius: 4px;
+    font-weight:900;
+    color: 283618;
+}
