@@ -8,8 +8,8 @@ inputBtn.addEventListener('click', function() {
 })
 
 // Log out the items in the myLeads array using a for loop 
-let text = "";
+
 for (let i = 0; i < myLeads.length; i++) {
-  text += myLeads[i] + "<br>";
+    console.log(myLeads[i])
+
 }
-document.getElementById("demo").innerHTML = text;
