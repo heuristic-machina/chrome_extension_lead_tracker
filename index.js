@@ -4,6 +4,10 @@ const inputBtn = document.getElementById('input-btn')
 let olEl = document.getElementById("ol-el")
 console.log(olEl)
 
+const container = document.getElementById('container')
+
+container.innerHTML = '<button>Buy!</button>'
+
 inputBtn.addEventListener('click', function() {
     myLeads.push(inputEl.value)
     console.log(myLeads)
