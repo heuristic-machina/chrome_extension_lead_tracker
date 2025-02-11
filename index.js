@@ -6,11 +6,11 @@ console.log(olEl)
 
 const container = document.getElementById('container')
 
-container.innerHTML = '<button>Buy!</button>'
+container.innerHTML = '<button onclick="buy()">Buy!</button>'
 
-container.addEventListener('click', function() {
+function buy() {
     container.innerHTML +="<p>Thanks for your purchase!</p>"
-})
+}
 
 inputBtn.addEventListener('click', function() {
     myLeads.push(inputEl.value)
