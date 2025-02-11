@@ -8,6 +8,10 @@ const container = document.getElementById('container')
 
 container.innerHTML = '<button>Buy!</button>'
 
+container.addEventListener('click', function() {
+    container.innerHTML +="<p>Thanks for your purchase!</p>"
+})
+
 inputBtn.addEventListener('click', function() {
     myLeads.push(inputEl.value)
     console.log(myLeads)
