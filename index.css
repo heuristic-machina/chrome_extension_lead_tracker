@@ -1,5 +1,5 @@
 html {
-    background-color: #4a4e69;
+    background-color: #2F4F4F;
     color: #fefae0;
     height: 800px;
 }
@@ -17,23 +17,23 @@ body {
 }
 
 #container button {
-    background: #588157;
+    background: #22bb33;
     text-shadow: 1px 1px 2px black;
     border-radius: 5px;
-    border-color: #606c38;
-    box-shadow: 5px 5px #bc6c25;
+    border-color: #2F4F4F;
+    box-shadow: 5px 5px #D3D3D3;
     padding: 10px 20px;
     margin-left: 150px;
     font-size: x-large;
     font-weight: 900;
-    color: #fefae0;
+    color: white;
 }
 
 #input-el {
     color: #283618;
     font-weight: 900px;
     font-size: large;
-    background-color: #fefae0;
+    background-color: #D3D3D3;
     border-radius: 8px;
     width: 300px;
     height: 50px;
@@ -51,13 +51,13 @@ body {
     text-shadow: 1px 1px 2px black;
     height: 50px;
     padding: 2px 8px;
-    background-color: #dda15e;
+    background-color: #003049;
     border-radius: 6px;
-    border-color:#bc6c25;
+    border-color:#003049;
     border-width: 3px;
     border-top-right-radius: 4px;
     font-weight:900;
-    color: #fefae0;
+    color: white;
 }
 p {
     color: #dda15e;
