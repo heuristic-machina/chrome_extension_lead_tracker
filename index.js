@@ -8,7 +8,23 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'))
 // persist data
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
+}
+
+// refactored for function reusability
+function render(leads) {
+    // Log out the items in the myLeads array using a for loop 
+    let listItems = ''
+    for (let i = 0; i < leads.length; i++) {
+        listItems += `
+            <li>
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
+                </a>
+            </li>
+        `
+    }
+    olEl.innerHTML = listItems
 }
 
 // delete button
@@ -17,7 +33,7 @@ deleteBtn.addEventListener('dblclick', function() {
     // clear localStorage, myLeads, DOM
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    render(myLeads)
 })
 
 // container & button
@@ -35,21 +51,6 @@ inputBtn.addEventListener('click', function() {
     // persist data
     localStorage.setItem('myLeads', JSON.stringify(myLeads))
     // call renderLeads() function
-    renderLeads()
+    render(myLeads)
 })
 
-// wrap for loop in renderLeads() function
-function renderLeads() {
-    // Log out the items in the myLeads array using a for loop 
-    let listItems = ''
-    for (let i = 0; i < myLeads.length; i++) {
-        listItems += `
-            <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
-                </a>
-            </li>
-        `
-    }
-    olEl.innerHTML = listItems
-}
