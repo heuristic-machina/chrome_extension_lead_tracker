@@ -5,23 +5,29 @@ let olEl = document.getElementById("ol-el")
 const deleteBtn = document.getElementById('delete-btn')
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'))
 
+// persist data
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     renderLeads()
 }
 
+// delete button
 deleteBtn.addEventListener('dblclick', function() {
     console.log('dbl clicked')
+    // clear localStorage, myLeads, DOM
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
 })
 
+// container & button
 const container = document.getElementById('container')
-
 container.innerHTML = '<button onclick="buy()">Buy!</button>'
-
 function buy() {
     container.innerHTML +="<p>Thanks for your purchase!</p>"
 }
 
+// input element push to array/local storage
 inputBtn.addEventListener('click', function() {
     myLeads.push(inputEl.value)
     // console.log(myLeads)
