@@ -2,7 +2,14 @@ let myLeads = []
 const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
 let olEl = document.getElementById("ol-el")
-console.log(olEl)
+
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'))
+
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
 const container = document.getElementById('container')
 
@@ -16,6 +23,8 @@ inputBtn.addEventListener('click', function() {
     myLeads.push(inputEl.value)
     // console.log(myLeads)
     inputEl.value = ""
+    // persist data
+    localStorage.setItem('myLeads', JSON.stringify(myLeads))
     // call renderLeads() function
     renderLeads()
 })
@@ -32,8 +41,6 @@ function renderLeads() {
                 </a>
             </li>
         `
-        // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" +myLeads[i] + "</a></li>"
-        // console.log(listItems)
     }
     olEl.innerHTML = listItems
 }
