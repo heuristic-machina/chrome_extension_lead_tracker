@@ -1,6 +1,7 @@
 html {
-    background-color: #283618;
+    background-color: #4a4e69;
     color: #fefae0;
+    height: 800px;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 }
 
 #container button {
-    background: #606c38;
+    background: #588157;
     text-shadow: 1px 1px 2px black;
     border-radius: 5px;
     border-color: #606c38;

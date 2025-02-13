@@ -19,8 +19,8 @@ inputBtn.addEventListener('click', function() {
 
 // Log out the items in the myLeads array using a for loop 
 
+let listItems = ''
 for (let i = 0; i < myLeads.length; i++) {
-    olEl.innerHTML += "<li>" + myLeads[i] + "</li>"
-    // console.log(myLeads[i])
-
+    listItems += '<li>' + myLeads[i] + '</li>'
 }
+olEl.innerHTML = listItems
