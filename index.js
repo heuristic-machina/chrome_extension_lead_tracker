@@ -4,6 +4,16 @@ const inputBtn = document.getElementById('input-btn')
 let olEl = document.getElementById("ol-el")
 const deleteBtn = document.getElementById('delete-btn')
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'))
+const tabBtn = document.getElementById('tab-btn')
+const tabs = [
+    {url: 'test tab'}
+]
+
+tabBtn.addEventListener('click', function() {
+    myLeads.push(tabs[0].url)
+    localStorage.setItem('myLeads', JSON.stringify(myLeads))
+    render(myLeads)
+})
 
 // persist data
 if (leadsFromLocalStorage) {
