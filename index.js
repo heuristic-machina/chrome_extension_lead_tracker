@@ -1,4 +1,4 @@
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+let myLeads = []
 const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
 let olEl = document.getElementById("ol-el")
@@ -14,13 +14,17 @@ function buy() {
 
 inputBtn.addEventListener('click', function() {
     myLeads.push(inputEl.value)
-    console.log(myLeads)
+    // console.log(myLeads)
+    // call renderLeads() function
+    renderLeads()
 })
 
-// Log out the items in the myLeads array using a for loop 
-
-let listItems = ''
-for (let i = 0; i < myLeads.length; i++) {
-    listItems += '<li>' + myLeads[i] + '</li>'
+// wrap for loop in renderLeads() function
+function renderLeads() {
+    // Log out the items in the myLeads array using a for loop 
+    let listItems = ''
+    for (let i = 0; i < myLeads.length; i++) {
+        listItems += '<li>' + myLeads[i] + '</li>'
+    }
+    olEl.innerHTML = listItems
 }
-olEl.innerHTML = listItems
