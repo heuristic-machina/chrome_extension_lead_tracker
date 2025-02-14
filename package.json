@@ -1,6 +1,6 @@
 {
-  "name": "lead_tracker",
-  "description": "lead_tracker",
+  "name": "mobile_app_lead_tracker",
+  "description": "lead_tracker_firebase",
   "scripts": {
     "start": "vite",
     "dev": "vite",
