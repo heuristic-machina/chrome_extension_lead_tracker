@@ -5,21 +5,20 @@ let olEl = document.getElementById("ol-el")
 const deleteBtn = document.getElementById('delete-btn')
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem('myLeads'))
 const tabBtn = document.getElementById('tab-btn')
-const tabs = [
-    {url: 'test tab'}
-]
-
-tabBtn.addEventListener('click', function() {
-    myLeads.push(tabs[0].url)
-    localStorage.setItem('myLeads', JSON.stringify(myLeads))
-    render(myLeads)
-})
 
 // persist data
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+// pull chrome address with tab button
+tabBtn.addEventListener('click', function() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem('myLeads', JSON.stringify(myLeads))
+        render(myLeads)
+    })
+})
 
 // refactored for function reusability
 function render(leads) {
@@ -46,12 +45,6 @@ deleteBtn.addEventListener('dblclick', function() {
     render(myLeads)
 })
 
-// container & button
-const container = document.getElementById('container')
-container.innerHTML = '<button onclick="buy()">Buy!</button>'
-function buy() {
-    container.innerHTML +="<p>Thanks for your purchase!</p>"
-}
 
 // input element push to array/local storage
 inputBtn.addEventListener('click', function() {
@@ -64,3 +57,10 @@ inputBtn.addEventListener('click', function() {
     render(myLeads)
 })
 
+
+// container & button
+// const container = document.getElementById('container')
+// container.innerHTML = '<button onclick="buy()">Buy!</button>'
+// function buy() {
+//     container.innerHTML +="<p>Thanks for your purchase!</p>"
+// }
